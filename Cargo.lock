@@ -299,7 +299,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "gdijkstra"
+name = "bfs-aligner"
 version = "0.1.0"
 dependencies = [
  "bio",

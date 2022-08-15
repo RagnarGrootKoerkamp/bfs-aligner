@@ -1,5 +1,5 @@
+use bfs_aligner::bfs;
 use bio::io::fasta;
-use gdijkstra::bfs;
 use std::{fs::File, io::BufReader, path::PathBuf};
 use structopt::StructOpt;
 
