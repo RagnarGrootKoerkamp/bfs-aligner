@@ -4,4 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gfa = "0.8.0"
+gfa = "*"
+structopt = "*"
+bstr = "*"
+rustc-hash = "*"
+bio = "*"
