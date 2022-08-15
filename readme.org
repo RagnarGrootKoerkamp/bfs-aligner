@@ -10,8 +10,8 @@ Usage:
 cargo run --release -- ./test/t1.gfa ./test/t1.fa
 #+end_src
 
-Note that the test directory is copied form the
-[[https://github.com/lh3/gwfa][GWFA repo]].
+The test directory is copied form the [[https://github.com/lh3/gwfa][GWFA repo]]. The Zenodo link there provides
+more test data.
 
 
 *** Alignment type
