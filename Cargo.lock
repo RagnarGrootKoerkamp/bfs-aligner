@@ -59,6 +59,17 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
+name = "bfs-aligner"
+version = "0.1.0"
+dependencies = [
+ "bio",
+ "bstr",
+ "gfa",
+ "rustc-hash",
+ "structopt",
+]
+
+[[package]]
 name = "bio"
 version = "0.41.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -296,17 +307,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c31b6d751ae2c7f11320402d34e41349dd1016f8d5d45e48c4312bc8625af50c"
 dependencies = [
  "byteorder",
-]
-
-[[package]]
-name = "bfs-aligner"
-version = "0.1.0"
-dependencies = [
- "bio",
- "bstr",
- "gfa",
- "rustc-hash",
- "structopt",
 ]
 
 [[package]]

@@ -5,6 +5,9 @@ extension alignments.
 It takes a ~.gfa~ graph and a Fasta file, and aligns the (only/first) sequence
 in the file to the graph, starting the alignment at the first node in the graph.
 
+This code is meant as a simple baseline for naive sequence-to-graph extension
+alignment to test and benchmark other methods for correctness and speed.
+
 Usage:
 #+begin_src
 cargo run --release -- ./test/t1.gfa ./test/t1.fa
