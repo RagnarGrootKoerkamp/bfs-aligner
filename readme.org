@@ -3,7 +3,7 @@
 This is a simple sequence-to-graph aligner that does unit-cost edit distance
 extension alignments.
 It takes a ~.gfa~ graph and a Fasta file, and aligns the (only/first) sequence
-in the file to the graph.
+in the file to the graph, starting the alignment at the first node in the graph.
 
 Usage:
 #+begin_src
