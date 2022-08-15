@@ -21,3 +21,32 @@ The start of the query is aligned to start of the first vertex in the graph.
 Note that they call it /global alignment/, but since only the start it fixed
 here, /half-global/ would be more accurate, but this seems to simple be
 /extension alignment/ (on a graph) in practice.
+
+*** Method
+
+- State ::
+  This does a simple BFS on the edit graph corresponding to the sequence-to-graph
+  alignment problem. Similar to GWFA, a state is given by
+  #+begin_src rust
+  struct State {
+      // The index in the text.
+      i: usize,
+      // The current graph vertex.
+      v: V,
+      // The position in the graph vertex, 0 <= j <= |v|.
+      j: usize,
+  }
+  #+end_src
+  Edges go between states and have cost $0$ or $1$.
+- Greedy matching ::
+  Whenever a state with $j < |v|$ has an outgoing matching edge, we apply the
+  greedy matching optimization and do not consider insertion and deletion edges.
+  I'm not actually aware of a proof that this works in graphs as well, but was
+  shown correct for pairwise (sequence-to-sequence) alignment.
+- Bucket queue ::
+  Instead of using a priority queue as in Dijkstra's algorithm, we know that
+  edge costs are bounded and a bucket queue suffices. In particular, edge costs
+  are $0$ or $1$ in this case, and a double ended queue (=deque=) suffices.
+  We simply push edges of cost $0$ to the front and edges of cost $1$ to the
+  back of the queue, and separately keep a hashmap containing the best distance
+  so far to each explored state.
