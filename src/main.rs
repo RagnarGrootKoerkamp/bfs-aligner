@@ -5,7 +5,9 @@ use structopt::StructOpt;
 
 #[derive(StructOpt)]
 struct Args {
+    /// A GFA file containing the graph to align to.
     graph: PathBuf,
+    /// A Fasta file containing a single query to align.
     query: PathBuf,
 }
 
@@ -25,7 +27,7 @@ fn main() {
     // Extension alignment of the entire query starting at vertex 0.
     let dist = bfs(&gfa, query, 0);
     println!(
-        "DIST: {dist}\tLEN: {}\tREL: {}",
+        "Edit distance: {dist}\tQuery length: {}\tRelative distance: {}",
         query.len(),
         dist as f32 / query.len() as f32
     );

@@ -80,7 +80,6 @@ pub fn bfs(graph: &Graph, text: &Text, s: V) -> D {
     }
 
     let mut last_d = 0;
-    let mut cnt = 0;
     let mut maxi = 0;
     while let Some((st, qd)) = queue.pop_front() {
         let d = g[&st];
@@ -89,13 +88,10 @@ pub fn bfs(graph: &Graph, text: &Text, s: V) -> D {
             continue;
         }
         if d > last_d {
-            //println!("Distance {last_d} count {cnt}");
             last_d = d;
         }
-        cnt += 1;
 
         if st.i > maxi {
-            //println!("Max i: {maxi} of {} at dist {d}", text.len());
             maxi = st.i;
         }
 
