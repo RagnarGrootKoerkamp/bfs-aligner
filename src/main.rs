@@ -27,7 +27,9 @@ fn main() {
     // Extension alignment of the entire query starting at vertex 0.
     let dist = bfs(&gfa, query, 0);
     println!(
-        "Edit distance: {dist}\tQuery length: {}\tRelative distance: {}",
+        "Edit distance: {dist}
+Query length: {}
+Relative distance: {}",
         query.len(),
         dist as f32 / query.len() as f32
     );

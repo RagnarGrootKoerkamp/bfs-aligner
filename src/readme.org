@@ -1,0 +1,23 @@
+#+title: BFS Aligner
+
+This is a simple sequence-to-graph aligner that does unit-cost edit distance
+extension alignments.
+It takes a ~.gfa~ graph and a Fasta file, and aligns the (only/first) sequence
+in the file to the graph.
+
+Usage:
+#+begin_src
+cargo run --release -- ./test/t1.gfa ./test/t1.fa
+#+end_src
+
+Note that the test directory is copied form the
+[[https://github.com/lh3/gwfa][GWFA repo]].
+
+
+*** Alignment type
+This solves extension alignment as introduced by [[https://github.com/lh3/gwfa][GWFA]]:
+The start of the query is aligned to start of the first vertex in the graph.
+
+Note that they call it /global alignment/, but since only the start it fixed
+here, /half-global/ would be more accurate, but this seems to simple be
+/extension alignment/ (on a graph) in practice.
