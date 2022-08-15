@@ -50,3 +50,6 @@ here, /half-global/ would be more accurate, but this seems to simple be
   We simply push edges of cost $0$ to the front and edges of cost $1$ to the
   back of the queue, and separately keep a hashmap containing the best distance
   so far to each explored state.
+
+** License
+MIT
